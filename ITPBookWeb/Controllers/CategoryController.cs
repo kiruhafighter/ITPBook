@@ -35,7 +35,7 @@ namespace ITPBookWeb.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
-                //TempData["success"] = "Category created succesfully";
+                TempData["success"] = "Category created succesfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -97,7 +97,7 @@ namespace ITPBookWeb.Controllers
             return View(categoryFromDb);
         }
         //POST
-        [HttpPost,ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePOST(int? id)
         {
@@ -108,9 +108,9 @@ namespace ITPBookWeb.Controllers
             }
             
             _db.Categories.Remove(obj);
-            _db.SaveChanges();
-            TempData["success"] = "Category deleted succesfully";
-            return RedirectToAction("Index"); 
+                _db.SaveChanges();
+                TempData["success"] = "Category deleted succesfully";
+                return RedirectToAction("Index"); 
         }
     }
 }
