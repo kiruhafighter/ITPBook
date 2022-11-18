@@ -3,15 +3,15 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script type="text/javascript">
-        taostr.success('@TempData["success"]');
+        toastr.success('@TempData["success"]');
     </script>
 }
+
 @if (TempData["error"] != null)
 {
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <h2>@TempData["error"]</h2>
     <script type="text/javascript">
-        taostr.error('@TempData["error"]');
+        toastr.success('@TempData["error"]');
     </script>
 }
