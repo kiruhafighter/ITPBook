@@ -1,4 +1,4 @@
-namespace ITPBookWeb.Models
+namespace ITPBook.Models
 {
     public class ErrorViewModel
     {

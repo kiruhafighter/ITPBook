@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ITPBookWeb</title>
-    <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
+    @*<link rel="stylesheet" href="~/css/bootswatchTheme.css" />*@
+    <link rel="stylesheet" href="~/css/bootsWatchThemeLux.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ITPBookWeb.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href=//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css />
@@ -38,10 +39,10 @@
                             </div>
                         </li>*@
                     </ul>
-                    <form class="d-flex">
+                    @*<form class="d-flex">
                         <input class="form-control me-sm-2" type="text" placeholder="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    </form>*@
                 </div>
             </div>
         </nav>
@@ -56,7 +57,7 @@
 
     <footer class="footer text-muted bg-dark">
         <div class="container">
-            &copy; 2022 - ITPBookWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - ITPBookWeb 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

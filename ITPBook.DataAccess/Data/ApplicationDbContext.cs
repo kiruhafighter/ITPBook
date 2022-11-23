@@ -1,7 +1,7 @@
-﻿using ITPBookWeb.Models;
+﻿using ITPBook.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ITPBookWeb.Data
+namespace ITPBook.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,5 +1,6 @@
-﻿using ITPBookWeb.Data;
-using ITPBookWeb.Models;
+﻿
+using ITPBook.DataAccess;
+using ITPBook.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITPBookWeb.Controllers
@@ -97,7 +98,7 @@ namespace ITPBookWeb.Controllers
             return View(categoryFromDb);
         }
         //POST
-        [HttpPost]
+        [HttpPost,ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePOST(int? id)
         {
