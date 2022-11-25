@@ -97,7 +97,7 @@ public class ProductController : Controller
         return View(obj);
     }
 
-    
+
 
 
     #region API CALLS
@@ -107,10 +107,12 @@ public class ProductController : Controller
         var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
         return Json(new { data = productList });
     }
+
+    //POST
     [HttpDelete]
     public IActionResult Delete(int? id)
     {
-        var obj = _unitOfWork.Product.GetFirstOrDefault(c => c.Id == id);
+        var obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
         if (obj == null)
         {
             return Json(new { success = false, message = "Error while deleting" });
@@ -124,8 +126,8 @@ public class ProductController : Controller
 
         _unitOfWork.Product.Remove(obj);
         _unitOfWork.Save();
-        return Json(new { success = true, message = "Delete Successfull" });
-        
+        return Json(new { success = true, message = "Delete Successful" });
+
     }
     #endregion
 }
