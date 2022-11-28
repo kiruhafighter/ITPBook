@@ -115,7 +115,7 @@ public class ProductController : Controller
         {
             return Json(new { success = false, message = "Error while deleting" });
         }
-
+        
         var oldImagePath = Path.Combine(_hostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
         if (System.IO.File.Exists(oldImagePath))
         {
@@ -128,6 +128,6 @@ public class ProductController : Controller
         
     }
     #endregion
-}
+}   
 
 
