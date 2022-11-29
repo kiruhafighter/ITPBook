@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ITPBook.DataAccess\ITPBook.DataAccess.csproj" />
+    <ProjectReference Include="..\ITPBook.Utility\ITPBook.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
