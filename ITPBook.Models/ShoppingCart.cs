@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Routing.Constraints;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,8 +12,8 @@ namespace ITPBook.Models
 {
     public class ShoppingCart
     {
-        
         public int Id { get; set; }
+
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
@@ -24,5 +25,8 @@ namespace ITPBook.Models
         [ForeignKey("ApplicationUserId")]
         [ValidateNever]
         public ApplicationUser ApplicationUser { get; set; }
+
+        [NotMapped]
+        public double Price { get; set; }
     }
 }
