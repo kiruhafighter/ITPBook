@@ -10,6 +10,7 @@ using ITPBook.DataAccess.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using ITPBook.Utility;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefConnection")
     ));
-
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
 
 
@@ -49,7 +50,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
