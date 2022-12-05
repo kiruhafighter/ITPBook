@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ITPBook.Models\ITPBook.Models.csproj" />
+    <ProjectReference Include="..\ITPBook.Utility\ITPBook.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
